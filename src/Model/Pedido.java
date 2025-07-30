@@ -10,23 +10,23 @@ public class Pedido {
     private Cliente idCli;
     private Date datePed;
     private List<ItemPedido> listProd;
-    private double valorTotalPed;
+    private double valueTotalPed;
 
-    //Construtor padrão
+    //construtor padrão
     public Pedido() {
         this.listProd = new ArrayList<>();
     }
 
-    //Construtor completo
+    //construtor completo
     public Pedido(int idPed, Cliente idCli, Date datePed, List<ItemPedido> listProd) {
         this.idPed = idPed;
         this.idCli = idCli;
         this.datePed = datePed;
         this.listProd = listProd;
-        calcularValorTotal(); //já calcula ao criar
+        calcularValorTotal();//calcula ao criar
     }
 
-    //Getters
+    //getters
     public int GetidPed() {
         return idPed;
     }
@@ -44,16 +44,16 @@ public class Pedido {
     }
 
     public double GetvalorTotalPed() {
-        return valorTotalPed;
+        return valueTotalPed;
     }
 
-    //Setters
-    public void SetidPed(int idPed) {
-        this.idPed = idPed;
+    //setters
+    public void SetidPed(int newidPed) {
+        this.idPed = newidPed;
     }
 
-    public void SetidCli(Cliente idCli) {
-        this.idCli = idCli;
+    public void SetidCli(Cliente newidCli) {
+        this.idCli = newidCli;
     }
 
     public void SetdataPedido(Date newdatePed) {
@@ -65,7 +65,7 @@ public class Pedido {
         calcularValorTotal();
     }
 
-    //Método para adicionar um item individualmente
+    //adiciona um item individualmente
     public void adicionarItem(ItemPedido item) {
         if (this.listProd == null) {
             this.listProd = new ArrayList<>();
@@ -74,14 +74,14 @@ public class Pedido {
         calcularValorTotal();
     }
 
-    //Método para calcular o valor total com base na lista
+    //calcula o valor total da lista
     private void calcularValorTotal() {
         double total = 0.0;
         if (listProd != null) {
             for (ItemPedido item : listProd) {
-                total += item.Getproduto().GetpricePr() * item.Getquantidade();
+                total += item.GetproductIPD().GetpricePr() * item.GetamountIPD();
             }
         }
-        this.valorTotalPed = total;
+        this.valueTotalPed = total;
     }
 }

@@ -1,32 +1,34 @@
 package Model;
 
 public class ItemPedido{
-    private Produto produto;
-    private int quantidade;
+    private Produto product;
+    private int amount;
 
+    /*construtor padrão*/
     public ItemPedido() { }
 
-    public ItemPedido(Produto produto, int quantidade) {
-        this.produto = produto;
-        this.quantidade = quantidade;
+    /*construtor completo */
+    public ItemPedido(Produto product, int amount) {
+        this.product = product;
+        this.amount = amount;
     }
 
-    public Produto Getproduto() {
-        return produto;
+    public Produto GetproductIPD() {
+        return product;
+    }
+    
+    public int GetamountIPD() {
+        return amount;
     }
 
-    public void Setproduto(Produto novoProduto) {
-        this.produto = novoProduto;
+    public void SetproductIPD(Produto newProduct) {
+        this.product = newProduct;
     }
 
-    public int Getquantidade() {
-        return quantidade;
-    }
-
-    public void Setquantidade(int novaQuantidade) {
-        if (novaQuantidade < 1) {
+    public void SetamountIPD(int newAmount) {
+        if (newAmount < 1) {
             throw new IllegalArgumentException("Quantidade deve ser maior que zero.");
         }
-        this.quantidade = novaQuantidade;
+        this.amount = newAmount;
     }
 }

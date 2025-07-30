@@ -1,6 +1,6 @@
 package Model;
 
-class Produto{
+public class Produto{
     private int idPro;
     private String namePro;
     private String descriptionPro;
@@ -10,7 +10,7 @@ class Produto{
     /*construtor padrão*/
     public Produto(){ };
 
-    /*Construtor completo*/
+    /*construtor completo*/
     public Produto(int idPro, String namePro, String descriptionPro, double pricePro, int stockPro){
         this.idPro = idPro;
         this.namePro = namePro;
@@ -24,37 +24,37 @@ class Produto{
     public int GetidPr(){
         return idPro;
 
-    };
+    }
     public String GetnamePr(){
         return namePro;
 
-    };
+    }
     public String GetdescriptionPr(){
         return descriptionPro;
 
-    };
+    }
     public double GetpricePr(){
         return pricePro;
 
-    };
+    }
     public int GetstockPr(){
         return stockPro;
 
-    };
+    }
 
     /*setters */
     public void SetidPr(int NewIdPr){
         this.idPro = NewIdPr;
 
-    };
+    }
     public void SetnamePr(String newNamePr){
         this.namePro = newNamePr;
 
-    };
+    }
     public void SetdescriptionPr(String newDescriptionPr){
         this.descriptionPro = newDescriptionPr;
 
-    };
+    }
     public void SetpricePr(double newPricePr){
         if(newPricePr < 0){//valor passado não valido
             throw new IllegalArgumentException("Preço não pode ser negativo.");
@@ -62,7 +62,7 @@ class Produto{
         }
         this.pricePro = newPricePr;
 
-    };
+    }
     public void SetstockPr(int newStockPr){
         if (stockPro < 0){
             throw new IllegalArgumentException("Estoque não pode ser negativo.");
@@ -70,6 +70,6 @@ class Produto{
         }
         this.stockPro = newStockPr;
 
-    };
-};
+    }
+}
 
