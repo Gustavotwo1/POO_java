@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 public class Pedido {
     private int idPed;
-    private Cliente idCli;
+    private Cliente cliente;
     private Date datePed;
     private List<ItemPedido> listProd;
     private double valueTotalPed;
@@ -18,9 +18,9 @@ public class Pedido {
     }
 
     //construtor completo
-    public Pedido(int idPed, Cliente idCli, Date datePed, List<ItemPedido> listProd) {
+    public Pedido(int idPed, Cliente cliente, Date datePed, List<ItemPedido> listProd) {
         this.idPed = idPed;
-        this.idCli = idCli;
+        this.cliente = cliente;
         this.datePed = datePed;
         this.listProd = listProd;
         calcularValorTotal();//calcula ao criar
@@ -31,8 +31,8 @@ public class Pedido {
         return idPed;
     }
 
-    public Cliente GetidCli() {
-        return idCli;
+    public Cliente GetCli() {
+        return cliente;
     }
 
     public Date GetdatePed() {
@@ -52,8 +52,8 @@ public class Pedido {
         this.idPed = newidPed;
     }
 
-    public void SetidCli(Cliente newidCli) {
-        this.idCli = newidCli;
+    public void SetCli(Cliente newCli) {
+        this.cliente = newCli;
     }
 
     public void SetdataPedido(Date newdatePed) {
