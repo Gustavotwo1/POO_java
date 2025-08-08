@@ -13,19 +13,19 @@ public class ItemPedido{
         this.amount = amount;
     }
 
-    public Produto GetproductIPD() {
+    public Produto getproductIPD() {
         return product;
     }
     
-    public int GetamountIPD() {
+    public int getamountIPD() {
         return amount;
     }
 
-    public void SetproductIPD(Produto newProduct) {
+    public void setproductIPD(Produto newProduct) {
         this.product = newProduct;
     }
 
-    public void SetamountIPD(int newAmount) {
+    public void setamountIPD(int newAmount) {
         if (newAmount < 1) {
             throw new IllegalArgumentException("Quantidade deve ser maior que zero.");
         }

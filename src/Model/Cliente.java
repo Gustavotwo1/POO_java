@@ -21,45 +21,45 @@ public class Cliente {
     }
 
     /*getter*/
-    public int GetidCl(){
+    public int getIdCl(){
         return idCli;
 
     }
-    public String GetnameCl(){
+    public String getNameCl(){
         return nameCli;
 
     } 
-    public String GetemailCl(){
+    public String getEmailCl(){
         return emailCli;
 
     } 
-    public String GetaddressCl(){
+    public String getAddressCl(){
         return addressCli;
 
     }
-    public String GetphoneCl(){
+    public String getPhoneCl(){
         return phoneCli;
 
     }
 
     /*setter*/
-    public void SetidCl(int newidCl){
+    public void setidCl(int newidCl){
         this.idCli = newidCl;
 
     }
-    public void SetnameCl(String newnameCl){
+    public void setnameCl(String newnameCl){
         this.nameCli = newnameCl;
 
     }
-    public void SetemailCl(String newemailCl){
+    public void setemailCl(String newemailCl){
         this.emailCli = newemailCl;
 
     }
-    public void SetaddressCl(String newaddressCl){
+    public void setaddressCl(String newaddressCl){
         this.addressCli = newaddressCl;
 
     }
-    public void SetphoneCl(String newPhoneCl){
+    public void setphoneCl(String newPhoneCl){
         this.phoneCli = newPhoneCl;
 
     }

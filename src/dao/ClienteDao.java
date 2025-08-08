@@ -8,14 +8,14 @@ import Model.Cliente;//importando a classe Cliente
 public class ClienteDao {
     /*salvar um novo cliente*/
     public void salvarCli(Cliente cliente){
-        String sql = "insert into cliente(nome, email, endereco, telefone) values(?, ?, ?. ?)";
+        String sql = "insert into cliente(nome, email, endereco, telefone) values(?, ?, ?, ?)";
 
         try(Connection conectar = Conexao.getConnection();
             PreparedStatement comd = conectar.prepareStatement(sql)){
-            comd.setString(1, cliente.GetnameCl());
-            comd.setString(2, cliente.GetemailCl());
-            comd.setString(3, cliente.GetaddressCl());
-            comd.setString(4, cliente.GetphoneCl());
+            comd.setString(1, cliente.getNameCl());
+            comd.setString(2, cliente.getEmailCl());
+            comd.setString(3, cliente.getAddressCl());
+            comd.setString(4, cliente.getPhoneCl());
 
             //salvar
             comd.executeUpdate();
@@ -40,9 +40,11 @@ public class ClienteDao {
             /*Percorre as linha do banco enquanto ainda houver.*/
             while(res.next()){
                 Cliente cliente =  new Cliente();//guarda dados
-                cliente.SetidCl(res.getInt("id"));
-                cliente.SetnameCl(res.getString("nome"));
-                cliente.SetemailCl(res.getString("email"));
+                cliente.setidCl(res.getInt("id"));
+                cliente.setnameCl(res.getString("nome"));
+                cliente.setemailCl(res.getString("email"));
+                cliente.setaddressCl(res.getString("endereco"));
+                cliente.setphoneCl(res.getString("telefone"));
                 //add cliente na lista
                 clientes.add(cliente);
 
@@ -50,23 +52,24 @@ public class ClienteDao {
         }
         /*mostra o erro caso tenha*/
         catch(SQLException erro){
-            erro.printStackTrace();
+            erro.getMessage();
 
         }
 
         return clientes;
     }
+
     /*atualizar cliente*/
     public void atualizarCli(Cliente cliente){
         String sql = "update cliente set nome = ?, email = ?, endereco = ?, telefone = ? where id = ?";
 
         try(Connection conectar = Conexao.getConnection();
             PreparedStatement comd = conectar.prepareStatement(sql)){
-            comd.setString(1, cliente.GetnameCl());
-            comd.setString(2, cliente.GetemailCl());
-            comd.setString(3, cliente.GetaddressCl());
-            comd.setString(4, cliente.GetphoneCl());
-            comd.setInt(5, cliente.GetidCl());//id do cliente para atualizar
+            comd.setString(1, cliente.getNameCl());
+            comd.setString(2, cliente.getEmailCl());
+            comd.setString(3, cliente.getAddressCl());
+            comd.setString(4, cliente.getPhoneCl());
+            comd.setInt(5, cliente.getIdCl());//id do cliente para atualizar
 
             //atualizar cliente
             comd.executeUpdate();

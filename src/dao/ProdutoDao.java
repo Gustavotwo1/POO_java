@@ -15,10 +15,10 @@ public class ProdutoDao {
             PreparedStatement comd = conectar.prepareStatement(sql)){
 
             //substitui os ? pelas strings e executa insert
-            comd.setString(1, produto.GetnamePr());
-            comd.setDouble(2, produto.GetpricePr());
-            comd.setString(3, produto.GetdescriptionPr());
-            comd.setInt(4, produto.GetstockPr());
+            comd.setString(1, produto.getNamePr());
+            comd.setDouble(2, produto.getPricePr());
+            comd.setString(3, produto.getDescriptionPr());
+            comd.setInt(4, produto.getStockPr());
 
             //inserir
             comd.executeUpdate();
@@ -35,7 +35,7 @@ public class ProdutoDao {
     /*mostrar toda lista de produtos*/
     public List<Produto> listarProd(){
         List<Produto> produtos = new ArrayList<>();//guardar produtos
-        String sql = "select from * produto";
+        String sql = "select * from produto";
 
         /*guardar resultado da consulta*/
         try(Connection conectar = Conexao.getConnection();
@@ -45,11 +45,11 @@ public class ProdutoDao {
             while(res.next()){
                 Produto prod = new Produto();
 
-                prod.SetidPr(res.getInt("id"));
-                prod.SetnamePr(res.getString("nome"));
-                prod.SetpricePr(res.getDouble("preco"));
-                prod.SetdescriptionPr(res.getString("descricao"));
-                prod.SetstockPr(res.getInt("estoque"));  
+                prod.setidPr(res.getInt("id"));
+                prod.setnamePr(res.getString("nome"));
+                prod.setpricePr(res.getDouble("preco"));
+                prod.setdescriptionPr(res.getString("descricao"));
+                prod.setstockPr(res.getInt("estoque"));  
 
                 //adicionar
                 produtos.add(prod);
@@ -91,10 +91,10 @@ public class ProdutoDao {
 
         try(Connection conectar = Conexao.getConnection();
             PreparedStatement comd = conectar.prepareStatement(sql)){
-            comd.setString(1, produto.GetnamePr());
-            comd.setDouble(2, produto.GetpricePr());
-            comd.setInt(3, produto.GetstockPr());
-            comd.setInt(4, produto.GetidPr());//id do produto a ser atualizado
+            comd.setString(1, produto.getNamePr());
+            comd.setDouble(2, produto.getPricePr());
+            comd.setInt(3, produto.getStockPr());
+            comd.setInt(4, produto.getIdPr());//id do produto a ser atualizado
             
             //atualizar
             comd.executeUpdate();

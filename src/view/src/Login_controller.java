@@ -21,10 +21,18 @@ public class Login_controller{
 
         if(usuario.equals("gustavo") && senha.equals("1234")){
             System.out.println("login feito com sucesso!!");
+            try{
 
+                App.trocarTela("menuCompleto.fxml");
+
+
+            }catch (Exception e) {
+
+                e.printStackTrace();
+
+            }
         }else{
             System.out.println("usuario ou senha incorretos");
-
         }
     }
 

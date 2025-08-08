@@ -27,40 +27,40 @@ public class Pedido {
     }
 
     //getters
-    public int GetidPed() {
+    public int getidPed() {
         return idPed;
     }
 
-    public Cliente GetCli() {
+    public Cliente getCli() {
         return cliente;
     }
 
-    public Date GetdatePed() {
+    public Date getdatePed() {
         return datePed;
     }
 
-    public List<ItemPedido> GetlistProd() {
+    public List<ItemPedido> getlistProd() {
         return listProd;
     }
 
-    public double GetvalorTotalPed() {
+    public double getvalorTotalPed() {
         return valueTotalPed;
     }
 
     //setters
-    public void SetidPed(int newidPed) {
+    public void setidPed(int newidPed) {
         this.idPed = newidPed;
     }
 
-    public void SetCli(Cliente newCli) {
+    public void setCli(Cliente newCli) {
         this.cliente = newCli;
     }
 
-    public void SetdataPedido(Date newdatePed) {
+    public void setdataPedido(Date newdatePed) {
         this.datePed = newdatePed;
     }
 
-    public void SetlistaProdutos(List<ItemPedido> newlistProd) {
+    public void setlistaProdutos(List<ItemPedido> newlistProd) {
         this.listProd = newlistProd;
         calcularValorTotal();
     }
@@ -79,7 +79,7 @@ public class Pedido {
         double total = 0.0;
         if (listProd != null) {
             for (ItemPedido item : listProd) {
-                total += item.GetproductIPD().GetpricePr() * item.GetamountIPD();
+                total += item.getproductIPD().getpricePr() * item.getamountIPD();
             }
         }
         this.valueTotalPed = total;

@@ -13,16 +13,16 @@ public class PedidoDao {
 
         try(Connection conexao = Conexao.getConnection();                     //pegar chave primaria
             PreparedStatement comd = conexao.prepareStatement(sql,  Statement.RETURN_GENERATED_KEYS)){
-            comd.setInt(1, pedido.GetCli().GetidCl());//pegar o id do cliente
-            comd.setDate(2, new java.sql.Date(pedido.GetdatePed().getTime()));//converte a data pro sql
-            comd.setDouble(3, pedido.GetvalorTotalPed());
+            comd.setInt(1, pedido.getCli().getidCl());//pegar o id do cliente
+            comd.setDate(2, new java.sql.Date(pedido.getdatePed().getTime()));//converte a data pro sql
+            comd.setDouble(3, pedido.getvalorTotalPed());
             //salva
             comd.executeUpdate();
 
             /*pega o id gerado e define no objeto*/
             ResultSet res = comd.getGeneratedKeys();
             if (res.next()) {
-                pedido.SetidPed(res.getInt(1));
+                pedido.setidPed(res.getInt(1));
                 
             }
 
@@ -44,7 +44,7 @@ public class PedidoDao {
 
             while (res.next()) {
                 Pedido pedido = new Pedido();
-                pedido.SetidPed(res.getInt("id"));
+                pedido.setidPed(res.getInt("id"));
         
                 /*continuar*/
 

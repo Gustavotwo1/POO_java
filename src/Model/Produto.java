@@ -21,41 +21,41 @@ public class Produto{
     }; 
     
     /*getters*/
-    public int GetidPr(){
+    public int getIdPr(){
         return idPro;
 
     }
-    public String GetnamePr(){
+    public String getNamePr(){
         return namePro;
 
     }
-    public String GetdescriptionPr(){
+    public String getDescriptionPr(){
         return descriptionPro;
 
     }
-    public double GetpricePr(){
+    public double getPricePr(){
         return pricePro;
 
     }
-    public int GetstockPr(){
+    public int getStockPr(){
         return stockPro;
 
     }
 
     /*setters */
-    public void SetidPr(int NewIdPr){
+    public void setidPr(int NewIdPr){
         this.idPro = NewIdPr;
 
     }
-    public void SetnamePr(String newNamePr){
+    public void setnamePr(String newNamePr){
         this.namePro = newNamePr;
 
     }
-    public void SetdescriptionPr(String newDescriptionPr){
+    public void setdescriptionPr(String newDescriptionPr){
         this.descriptionPro = newDescriptionPr;
 
     }
-    public void SetpricePr(double newPricePr){
+    public void setpricePr(double newPricePr){
         if(newPricePr < 0){//valor passado não valido
             throw new IllegalArgumentException("Preço não pode ser negativo.");
 
@@ -63,7 +63,7 @@ public class Produto{
         this.pricePro = newPricePr;
 
     }
-    public void SetstockPr(int newStockPr){
+    public void setstockPr(int newStockPr){
         if (stockPro < 0){
             throw new IllegalArgumentException("Estoque não pode ser negativo.");
 
